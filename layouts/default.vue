@@ -37,4 +37,7 @@ export default {
 </script>
 
 <style>
+.darken {
+  background: #1e2023;
+}
 </style>

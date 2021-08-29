@@ -10,11 +10,8 @@
       <vs-navbar-item :active="active == 'docs'" id="docs" to="/about">
         About
       </vs-navbar-item>
-      <vs-navbar-item :active="active == 'components'" id="components">
-        Components
-      </vs-navbar-item>
-      <vs-navbar-item :active="active == 'license'" id="license">
-        license
+      <vs-navbar-item :active="active == 'contact'" id="contact" to="/contact">
+        Contact
       </vs-navbar-item>
       <template #right>
         <vs-switch color="warning" v-model="active2" @click="ChangeTheme">
