@@ -2,7 +2,7 @@
   <div class="center examplex">
     <vs-navbar center-collapsed v-model="active" shadow-scroll fixed>
       <template #left>
-        <img src="/" alt="" />
+        <img src="/favicon.ico" alt="" width="30px" height="30px" />
       </template>
       <vs-navbar-item :active="active == 'guide'" id="guide" to="/">
         Home
@@ -14,10 +14,10 @@
         Contact
       </vs-navbar-item>
       <template #right>
-        <vs-switch color="warning" v-model="active2" @click="ChangeTheme">
+        <vs-switch warn v-model="active2" @click="ChangeTheme">
           <template #circle>
-            <i v-if="!active2" class="bx bxs-sun"></i>
-            <i v-else class="bx bxs-moon"></i>
+            <i v-if="!active2" class="bx bxs-moon"></i>
+            <i v-else class="bx bxs-sun"></i>
           </template>
         </vs-switch>
       </template>
@@ -35,7 +35,7 @@ export default {
     ChangeTheme() {
       const returnTheme = this.$vs.toggleTheme();
       this.$vsTheme = returnTheme == "dark";
-      if (returnTheme == "dark" && this.active2 != true) {
+      if (returnTheme == "dark") {
         document.body.classList.add("darken");
       } else {
         document.body.classList.remove("darken");

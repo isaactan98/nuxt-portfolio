@@ -1,5 +1,5 @@
 <template>
-  <div class="">
+  <div class="center vh-95">
     <div class="center"><h2>Contact</h2></div>
     <div class="center content-inputs">
       <vs-input

@@ -40,4 +40,7 @@ export default {
 .darken {
   background: #1e2023;
 }
+.vh-95{
+  height: 95vh;
+}
 </style>
