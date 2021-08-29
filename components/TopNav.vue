@@ -1,6 +1,6 @@
 <template>
   <div class="center examplex">
-    <vs-navbar center-collapsed v-model="active">
+    <vs-navbar center-collapsed v-model="active" shadow-scroll fixed>
       <template #left>
         <img src="/" alt="" />
       </template>

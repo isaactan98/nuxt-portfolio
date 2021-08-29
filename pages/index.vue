@@ -1,7 +1,7 @@
 
 <template>
   <div class="center grid">
-    <vs-row>
+    <vs-row v-for="(row, index) in 3" :key="index">
       <vs-col
         vs-type="flex"
         :key="index"
