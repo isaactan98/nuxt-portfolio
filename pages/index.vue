@@ -15,7 +15,7 @@
             <h3>Pot with a plant</h3>
           </template>
           <template #img>
-            <img src="/foto5.png" alt="" />
+            <img src="/favicon.ico" alt="" />
           </template>
           <template #text>
             <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>

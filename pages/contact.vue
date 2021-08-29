@@ -1,5 +1,5 @@
 <template>
-  <div class="center vh-95">
+  <div class="vh-95">
     <div class="center"><h2>Contact</h2></div>
     <div class="center content-inputs">
       <vs-input
@@ -9,6 +9,7 @@
         icon-after
         v-model="value3"
         label-placeholder="Email"
+        size="large"
         id="email"
         readonly
       >
