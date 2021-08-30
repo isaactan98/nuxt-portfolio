@@ -41,6 +41,6 @@ export default {
   background: #1e2023;
 }
 .vh-95{
-  height: 95vh;
+  min-height: 100vh;
 }
 </style>
