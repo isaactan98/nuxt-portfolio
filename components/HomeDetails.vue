@@ -102,7 +102,7 @@ export default {
 
 @media screen and (max-width: 768px) {
   .details {
-    max-width: 650px;
+    max-width: 600px;
     padding: 10px;
   }
 }
