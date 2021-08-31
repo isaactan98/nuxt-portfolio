@@ -1,5 +1,5 @@
 <template>
-  <div class="center examplex">
+  <div class="center">
     <vs-navbar center-collapsed collapse v-model="active" shadow-scroll fixed>
       <template #left>
         <vs-button

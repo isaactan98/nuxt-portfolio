@@ -3,13 +3,7 @@
   <div class="vh-95 center">
     <div class="center grid al-c vh-95">
       <vs-row>
-        <vs-col
-          vs-type="flex"
-          vs-justify="center"
-          vs-align="center"
-          lg="6"
-          xs="12"
-        >
+        <vs-col vs-type="flex" vs-justify="center" vs-align="center" lg="6" sm="12" xs="12">
           <div class="center">
             <div class="">
               <h1 class="hero-title">Hi, I'm Isaac Tan.</h1>
@@ -20,13 +14,7 @@
             </div>
           </div>
         </vs-col>
-        <vs-col
-          vs-type="flex"
-          vs-justify="center"
-          vs-align="center"
-          lg="6"
-          xs="12"
-        >
+        <vs-col vs-type="flex" vs-justify="center" vs-align="center" lg="6" sm="12" xs="12">
           <div class="center">
             <vs-card type="2">
               <template #title>
@@ -43,17 +31,36 @@
         </vs-col>
       </vs-row>
     </div>
-    <div class="center grid">
-      <div>
-        <home-details />
-      </div>
-    </div>
+    <HomeDetails />
+    <Footers/>
   </div>
 </template>
 <script>
+import Footers from '~/components/Footer.vue';
 import HomeDetails from "~/components/HomeDetails.vue";
 export default {
-  components: { HomeDetails },
+  head: {
+    meta: [
+      {
+        hid: "description",
+        name: "description",
+        content:
+          "This is a portfolio for Isaac Tan, including Recent Work, About, and Contact Page.",
+      },
+      {
+        hid: "keywords",
+        name: "keywords",
+        content:
+          "portfolio, Isaac Tan, Isaac Tan Yu Hao, isaactan.website, Isaac Tan Portfolio, ",
+      },
+      {
+        hid: "robots",
+        name: "robots",
+        content: "index, follow",
+      },
+    ],
+  },
+  components: { HomeDetails, Footers },
   data() {
     return {
       active: "home",
@@ -89,7 +96,7 @@ export default {
   .center {
     padding: 10px !important;
   }
-  .hero-title{
+  .hero-title {
     font-size: 3em;
   }
 }
