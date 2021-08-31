@@ -1,6 +1,8 @@
 <template>
   <div class="vh-95">
-    <div class="center"><h2>Contact</h2></div>
+    <div class="center">
+      <h2>Contact</h2>
+    </div>
     <div class="center content-inputs">
       <vs-input
         shadow
@@ -17,18 +19,8 @@
           <i class="bx bx-mail-send"></i>
         </template>
       </vs-input>
-      <vs-button
-        @click="handleClick"
-        :icon="success"
-        :upload="sending"
-        :color="success ? 'success' : 'primary'"
-      >
-        <span v-if="!success">
-          <i class="bx bx-mail-send"></i>
-          Copy
-        </span>
-
-        <i class="bx bx-check" v-else></i>
+      <vs-button ref="button" flat @click="handleClick">
+        <b>Copy</b>
       </vs-button>
     </div>
   </div>
@@ -39,17 +31,20 @@ export default {
   data: () => ({
     active: "contact",
     value3: "iztan98@gmail.com",
-    sending: false,
-    success: false,
   }),
   methods: {
     handleClick() {
-      this.sending = true;
+      const loading = this.$vs.loading({
+        target: this.$refs.button,
+        scale: "0.6",
+        background: "primary",
+        opacity: 1,
+        color: "#fff",
+      });
       this.$copyText(this.value3);
       setTimeout(() => {
-        this.sending = false;
-        this.success = !this.success;
-      }, 1000);
+        loading.close();
+      }, 3000);
     },
   },
 };

@@ -99,4 +99,11 @@ export default {
     padding: 10px;
   }
 }
+
+@media screen and (max-width: 768px) {
+  .details {
+    max-width: 650px;
+    padding: 10px;
+  }
+}
 </style>
