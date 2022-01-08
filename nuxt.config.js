@@ -5,7 +5,7 @@ export default {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' },
+      { hid: 'description', name: 'description', content: 'This is a portfolio for Isaac Tan, including Recent Work, About, and Contact Page.' },
       { name: 'format-detection', content: 'telephone=no' }
     ],
     link: [
@@ -26,6 +26,7 @@ export default {
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
+    'nuxt-gsap-module'
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -44,7 +45,9 @@ export default {
   // PWA module configuration: https://go.nuxtjs.dev/pwa
   pwa: {
     manifest: {
-      lang: 'en'
+      lang: 'en',
+      name: 'Isaac Tan Portfolio',
+      short_name: 'Isaac`s Portfolio',
     }
   },
 

@@ -1,6 +1,12 @@
 <template>
   <div class="center">
-    <vs-navbar center-collapsed collapse v-model="active" shadow-scroll fixed>
+    <vs-navbar
+      shadow-scroll
+      fixed
+      padding-scroll
+      right-collapsed
+      v-model="active"
+    >
       <template #left>
         <vs-button
           @click="activeSidebar = !activeSidebar"
@@ -24,7 +30,7 @@
       <template #right>
         <vs-switch warn v-model="active2" @click="ChangeTheme">
           <template #circle>
-            <i v-if="!active2" class="bx bxs-moon"></i>
+            <i v-if="active2" class="bx bxs-moon"></i>
             <i v-else class="bx bxs-sun"></i>
           </template>
         </vs-switch>
@@ -59,19 +65,16 @@
         </template>
         Chat
       </vs-sidebar-item>
-      <!-- <template #footer>
+      <template #footer>
         <vs-row justify="space-between">
-          <vs-avatar>
-            <img src="/avatars/avatar-5.png" alt="" />
-          </vs-avatar>
-
-          <vs-avatar badge-color="danger" badge-position="top-right">
-            <i class="bx bx-bell"></i>
-
-            <template #badge> 28 </template>
-          </vs-avatar>
+          <vs-switch warn v-model="active2" @click="ChangeTheme">
+            <template #circle>
+              <i v-if="active2" class="bx bxs-moon"></i>
+              <i v-else class="bx bxs-sun"></i>
+            </template>
+          </vs-switch>
         </vs-row>
-      </template> -->
+      </template>
     </vs-sidebar>
   </div>
 </template>
@@ -86,13 +89,31 @@ export default {
   methods: {
     ChangeTheme() {
       const returnTheme = this.$vs.toggleTheme();
+      this.storeToken(returnTheme);
       this.$vsTheme = returnTheme == "dark";
       if (returnTheme == "dark") {
+        this.active2 = true;
         document.body.classList.add("darken");
       } else {
+        this.active2 = false;
         document.body.classList.remove("darken");
       }
+      console.log(this.active2);
     },
+    storeToken(themeToken) {
+      if (process.client) {
+        localStorage.setItem("theme", themeToken);
+      }
+    },
+  },
+  mounted() {
+    const getTheme = localStorage.getItem("theme");
+
+    if (getTheme == "dark") {
+      this.active2 = true;
+      this.$vs.setTheme("dark");
+      document.body.classList.add("darken");
+    }
   },
 };
 </script>

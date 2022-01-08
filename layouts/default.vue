@@ -1,7 +1,7 @@
 <template>
   <div>
     <top-nav />
-    <Nuxt />
+    <Nuxt id="padding-scroll-content" />
   </div>
 </template>
 
@@ -37,10 +37,14 @@ export default {
 </script>
 
 <style>
+body{
+  overflow-y: auto;
+}
 .darken {
   background: #1e2023;
 }
 .vh-95{
   min-height: 100vh;
+  width: 100%;
 }
 </style>
